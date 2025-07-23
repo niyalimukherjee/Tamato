@@ -1,10 +1,12 @@
-import React,{useState} from 'react';
+import React,{useContext, useState} from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 // import logo from '../../assets/foodlogo.png';
 import {Link} from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext';
 const Navbar = ({setShowLogin}) => { // Destructure setShowLogin from props
   const [menu,setMenu]=useState("home");
+  const{getTotalCartAmount}=useContext(StoreContext)
   return (
     <div className='navbar'>
      <Link to='/'> <img src={assets.logo} alt="Food Delivery Logo" className="navbar-logo" /></Link>
@@ -19,7 +21,7 @@ const Navbar = ({setShowLogin}) => { // Destructure setShowLogin from props
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
          <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link> 
-          <div className="dot"></div>
+          <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
         <button onClick={()=>setShowLogin(true)}>Sign In</button> {/* Corrected to setShowLogin */}
       </div>

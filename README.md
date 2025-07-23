@@ -1,3 +1,5 @@
+Tamato is food delivering app below is folder sturcture
+
 src/
 ├── components/
 │   ├── Navbar.js

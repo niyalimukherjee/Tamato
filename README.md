@@ -1,4 +1,6 @@
-Tamato is food delivering app below is folder sturcture
+Tamato is food delivering app below is folder structure
+
+Deployed Link:https://tamato.netlify.app/
 
 src/
 ├── components/
